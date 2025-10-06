@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: br.com.agenciaviagens.sistema_reservas_web.SistemaReservasWebApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.9 s - in br.com.agenciaviagens.sistema_reservas_web.SistemaReservasWebApplicationTests

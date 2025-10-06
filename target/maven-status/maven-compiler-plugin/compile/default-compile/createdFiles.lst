@@ -1,0 +1,4 @@
+br/com/agenciaviagens/sistema_reservas_web/controller/ReservaController.class
+br/com/agenciaviagens/sistema_reservas_web/model/Reserva.class
+br/com/agenciaviagens/sistema_reservas_web/repository/ReservaRepository.class
+br/com/agenciaviagens/sistema_reservas_web/SistemaReservasWebApplication.class
