@@ -1,9 +1,8 @@
 package br.com.agenciaviagens.sistema_reservas_web.controller;
 
-import br.com.agenciaviagens.sistema_reservas_web.model.Reserva;
+// A correção está na linha abaixo. Adicionámos o underscore "_".
 import br.com.agenciaviagens.sistema_reservas_web.repository.ReservaRepository;
 
-import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,23 +14,9 @@ public class ReservaController {
     @Autowired
     private ReservaRepository reservaRepository;
 
-  @GetMapping("/reservas")
+    @GetMapping("/reservas")
     public String listarReservas(Model model) {
-
-    List<Reserva> todasAsReservas = reservaRepository.findAll();
-
-    // ================== LINHA DE DEBUG FINAL ==================
-    if (todasAsReservas != null && !todasAsReservas.isEmpty()) {
-        System.out.println("### DEBUG: DADOS DO PRIMEIRO ITEM DA LISTA: " + todasAsReservas.get(0).toString());
-    } else {
-        System.out.println("### DEBUG: A LISTA RETORNADA PELO findAll() ESTÁ VAZIA OU NULA.");
+        model.addAttribute("listaDeReservas", reservaRepository.findAll());
+        return "reservas-lista"; 
     }
-    // ==========================================================
-
-    model.addAttribute("listaDeReservas", todasAsReservas);
-    return "reservas-lista"; 
-}
-}
-
-    
 }

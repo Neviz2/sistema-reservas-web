@@ -4,5 +4,5 @@ import br.com.agenciaviagens.sistema_reservas_web.model.Reserva;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 public interface ReservaRepository extends MongoRepository<Reserva, String> {
-    // Vazio por enquanto! O Spring faz a mágica.
+    // Vazio! O Spring faz a mágica.
 }

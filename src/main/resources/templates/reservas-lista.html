@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <title>Lista de Reservas</title>
     <style>
-        body { font-family: sans-serif; margin: 2em; background-color: black; color: white; }
+        body { font-family: sans-serif; margin: 2em; }
         table { border-collapse: collapse; width: 100%; }
         th, td { border: 1px solid #dddddd; text-align: left; padding: 8px; }
-        thead { background-color: black; }
+        thead { background-color: #f2f2f2; }
     </style>
 </head>
 <body>
     <h1>Todas as Reservas</h1>
-    <table border="1">
+    <table>
         <thead>
             <tr>
                 <th>Cliente</th>
@@ -24,11 +24,11 @@
         </thead>
         <tbody>
             <tr th:each="reserva : ${listaDeReservas}">
-                <td th-text="${reserva.cliente}">Nome do Cliente</td>
-                <td th-text="${reserva.pacote}">Nome do Pacote</td>
-                <td th-text="${#numbers.formatCurrency(reserva.valor)}">R$ 0,00</td>
-                <td th-text="${reserva.dataSaida}">AAAA-MM-DD</td>
-                <td th-text="${reserva.status}">Status</td>
+                <td th:text="${reserva.cliente}">Nome do Cliente</td>
+                <td th:text="${reserva.pacote}">Nome do Pacote</td>
+                <td th:text="${#numbers.formatCurrency(reserva.valor)}">R$ 0,00</td>
+                <td th:text="${reserva.dataSaida}">AAAA-MM-DD</td>
+                <td th:text="${reserva.status}">Status</td>
             </tr>
         </tbody>
     </table>

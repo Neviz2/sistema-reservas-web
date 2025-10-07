@@ -2,7 +2,7 @@ package br.com.agenciaviagens.sistema_reservas_web.model;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.data.mongodb.core.mapping.Field; // <-- IMPORT ADICIONADO
+import org.springframework.data.mongodb.core.mapping.Field;
 import java.time.LocalDate;
 
 @Document(collection = "reservas")
@@ -10,21 +10,21 @@ public class Reserva {
 
     @Id
     private String id;
+
     private String cliente;
     private String pacote;
     private Double valor;
 
-    @Field("data_saida") // <-- CORREÇÃO PRINCIPAL: Mapeia para o nome do campo no banco
+    @Field("data_saida")
     private LocalDate dataSaida;
     
     private String status;
 
-    // Construtor vazio (essencial para o Spring)
+    // Construtor vazio (essencial)
     public Reserva() {
     }
 
-    // Getters e Setters para TODOS os campos
-
+    // Getters e Setters (essenciais)
     public String getId() {
         return id;
     }
@@ -72,10 +72,4 @@ public class Reserva {
     public void setStatus(String status) {
         this.status = status;
     }
-
- @Override
-        public String toString() {
-        return "Reserva [id=" + id + ", cliente=" + cliente + ", pacote=" + pacote + ", valor=" + valor + ", dataSaida="
-            + dataSaida + ", status=" + status + "]";
-}
 }
