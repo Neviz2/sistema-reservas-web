@@ -73,9 +73,9 @@ public class Reserva {
         this.status = status;
     }
 
-    @Override
-    public String toString() {
+ @Override
+        public String toString() {
         return "Reserva [id=" + id + ", cliente=" + cliente + ", pacote=" + pacote + ", valor=" + valor + ", dataSaida="
-                + dataSaida + ", status=" + status + "]";
-    }
+            + dataSaida + ", status=" + status + "]";
+}
 }
