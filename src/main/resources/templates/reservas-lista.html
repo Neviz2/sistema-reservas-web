@@ -1,36 +1,52 @@
 <!DOCTYPE html>
-<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Lista de Reservas</title>
+    <title>Sistema de Reservas</title>
     <style>
-        body { font-family: sans-serif; margin: 2em; }
-        table { border-collapse: collapse; width: 100%; }
-        th, td { border: 1px solid #dddddd; text-align: left; padding: 8px; }
-        thead { background-color: #f2f2f2; }
+        /* CSS Básico para deixar o menu bonito */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #130707;
+        }
+        .navbar {
+            background-color: #333; /* Cor de fundo do menu */
+            overflow: hidden; /* Garante que o conteúdo não saia para fora */
+            color: rgb(189, 168, 168);
+            padding: 14px 20px;
+        }
+        .navbar a {
+            float: left; /* Alinha os links à esquerda */
+            display: block; /* Faz o link ocupar todo o espaço do botão */
+            color: white; /* Cor do texto */
+            text-align: center;
+            padding: 14px 16px; /* Espaçamento interno (altura, largura) */
+            text-decoration: none; /* Remove o sublinhado dos links */
+            font-size: 17px;
+            transition: background-color 0.3s; /* Animação suave na cor de fundo */
+        }
+        .navbar a:hover {
+            background-color: #ddd; /* Cor de fundo ao passar o mouse */
+            color: black; /* Cor do texto ao passar o mouse */
+        }
+        .content {
+            padding: 20px;
+        }
     </style>
 </head>
 <body>
-    <h1>Todas as Reservas</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Cliente</th>
-                <th>Pacote</th>
-                <th>Valor</th>
-                <th>Data de Saída</th>
-                <th>Status</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr th:each="reserva : ${listaDeReservas}">
-                <td th:text="${reserva.cliente}">Nome do Cliente</td>
-                <td th:text="${reserva.pacote}">Nome do Pacote</td>
-                <td th:text="${#numbers.formatCurrency(reserva.valor)}">R$ 0,00</td>
-                <td th:text="${reserva.dataSaida}">AAAA-MM-DD</td>
-                <td th:text="${reserva.status}">Status</td>
-            </tr>
-        </tbody>
-    </table>
+
+    <div class="navbar">
+        <a href="/">Página Inicial</a>
+        <a href="/reservas">Listar Todas as Reservas</a>
+        <a href="/reservas/nova">Criar Nova Reserva</a>
+    </div>
+
+    <div class="content">
+        <h1>Bem-vindo ao Sistema de Reservas da Agência de Viagens!</h1>
+        <p>Utilize o menu acima para navegar pelas opções do sistema.</p>
+    </div>
+
 </body>
 </html>
