@@ -23,11 +23,7 @@ public class ReservaController {
         return "reservas-lista";
     }
 
-    /**
-     * URL: /reservas/{id} (Ex: /reservas/abc-123-xyz)
-     * Busca UMA reserva específica pelo seu ID, que vem na URL.
-     */
-    // CORREÇÃO 1: A URL agora espera um ID.
+ 
     @GetMapping("/reservas/{idDaReserva}")
     // CORREÇÃO 2: O método agora recebe o ID da URL como um parâmetro.
     public String buscarUmaReserva(@PathVariable String idDaReserva, Model model) {
@@ -36,19 +32,13 @@ public class ReservaController {
         return "reserva-detalhe";
     }
 
-    /**
-     * URL: /reservas/nova
-     * Mostra a página com o formulário para criar uma nova reserva.
-     */
+  
     @GetMapping("/reservas/nova")
     public String formularioNovaReserva() {
         return "reserva-formulario";
     }
     
-    /**
-     * URL: /
-     * Mostra a página inicial com o menu.
-     */
+    
     @GetMapping("/")
     public String paginaInicial() {
         return "index";
